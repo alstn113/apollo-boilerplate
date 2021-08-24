@@ -5,6 +5,8 @@ import Home from "../../pages/home/home";
 import PostList from "../../pages/postList/postList";
 import PostDetail from "../../pages/postDetail/postDetail";
 import CreatePost from "../../pages/createPost/createPost";
+import LoginForm from "../../pages/loginForm/loginForm";
+import RegisterForm from "../../pages/registerForm/registerForm";
 import NotFound from "../../pages/notFound/notFound";
 
 import "./app.css";
@@ -28,6 +30,12 @@ function App() {
           </Route>
           <Route exact path="/create-post">
             <CreatePost />
+          </Route>
+          <Route exact path="/login">
+            <LoginForm />
+          </Route>
+          <Route exact path="/register">
+            <RegisterForm />
           </Route>
           <Route path="*">
             <NotFound />

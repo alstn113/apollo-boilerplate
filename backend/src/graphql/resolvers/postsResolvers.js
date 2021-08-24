@@ -1,13 +1,23 @@
 import Post from "../../models/post";
+import mongoose from "mongoose";
+const { ObjectId } = mongoose.Types;
 
 export default {
   Query: {
     getPosts: async () => {
-      return await Post.find({});
+      const posts = await Post.find({});
+      return posts;
     },
     getPost: async (_, args) => {
       const { _id } = args;
-      return await Post.findById(_id);
+      if (!ObjectId.isValid(_id)) {
+        throw new Error("BAD REQUEST");
+      }
+      const post = await Post.findById(_id);
+      if (!post) {
+        throw new Error("NOT FOUND");
+      }
+      return post;
     },
   },
   Mutation: {
@@ -18,8 +28,8 @@ export default {
     },
     deletePost: async (_, args) => {
       const { _id } = args;
-      await Post.findByIdAndRemove(_id);
-      return `OK YOU DELETE A Post ${_id} `;
+      const post = await Post.findByIdAndRemove(_id);
+      return post;
     },
     updatePost: async (_, args) => {
       const { _id } = args;

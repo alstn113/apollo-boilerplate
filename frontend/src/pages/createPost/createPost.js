@@ -1,6 +1,8 @@
 import { useMutation } from "@apollo/client";
 import { useHistory } from "react-router";
 import { useForm } from "react-hook-form";
+
+import { Button } from "../../common/styles/button.styles";
 import { CREATE_POST } from "../../graphql/mutations/posts";
 import { GET_POSTS } from "../../graphql/queries/posts";
 
@@ -36,20 +38,15 @@ function CreatePost() {
     });
   };
   return (
-    <div className="posts-form">
+    <div className="create">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <input type="text" {...register("title")} />
-        </div>
-        <div>
-          <input type="text" {...register("body")} />
-        </div>
-        <div>
-          <input type="text" {...register("author")} />
-        </div>
-        <div>
-          <button type="submit">{loading ? "loading..." : "create"}</button>
-        </div>
+        <label>Post title:</label>
+        <input type="text" {...register("title")} />
+        <label>Post body:</label>
+        <textarea type="text" {...register("body")} />
+        <label>Post author:</label>
+        <input type="text" {...register("author")} />
+        <Button>{loading ? "loading..." : "create"}</Button>
       </form>
     </div>
   );

@@ -5,18 +5,15 @@ import "./header.css";
 function Header() {
   return (
     <header>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/posts">PostList</NavLink>
-          </li>
-          <li>
-            <NavLink to="/create-post">Create</NavLink>
-          </li>
-        </ul>
+      <nav className="navbar">
+        <h1>Blog</h1>
+        <div className="links">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/posts">Posts</NavLink>
+          <NavLink to="/create-post">New Post</NavLink>
+          <NavLink to="/login">Login</NavLink>
+          <NavLink to="/register">Register</NavLink>
+        </div>
       </nav>
     </header>
   );

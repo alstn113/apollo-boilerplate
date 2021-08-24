@@ -1,3 +1,4 @@
 import postsTypeDefs from "./postsTypeDefs";
+import userTypeDefs from "./userTypeDefs";
 
-export default [postsTypeDefs];
+export default [postsTypeDefs, userTypeDefs];

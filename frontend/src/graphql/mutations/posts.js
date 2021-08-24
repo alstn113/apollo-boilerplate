@@ -18,3 +18,14 @@ export const DELETE_POST = gql`
     }
   }
 `;
+
+export const UPDATE_POST = gql`
+  mutation UpdatePost($post: PostInput!) {
+    updatePost(post: $post) {
+      _id
+      title
+      body
+      author
+    }
+  }
+`;

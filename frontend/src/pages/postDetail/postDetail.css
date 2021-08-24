@@ -1,0 +1,16 @@
+.post-details h2 {
+  font-size: 30px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+.post-details div {
+  margin: 20px 0;
+}
+.post-details button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}

@@ -1,3 +1,4 @@
 import postsResolvers from "./postsResolvers";
+import userResolvers from "./userResolvers";
 
-export default [postsResolvers];
+export default [postsResolvers, userResolvers];
